@@ -21,7 +21,6 @@ data _≡_ {A} : (x y : Graph A) -> Set where
 
     -- Congruence
     +left-congruence  : ∀ {x y z : Graph A} -> x ≡ y -> x + z ≡ y + z
-    +right-congruence : ∀ {x y z : Graph A} -> x ≡ y -> z + x ≡ z + y
     *left-congruence  : ∀ {x y z : Graph A} -> x ≡ y -> x * z ≡ y * z
     *right-congruence : ∀ {x y z : Graph A} -> x ≡ y -> z * x ≡ z * y
 
