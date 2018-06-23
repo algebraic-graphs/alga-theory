@@ -35,15 +35,6 @@ L : ∀ {op : BinaryOperator} -> ∀ {A} {x y z : Graph A} -> x ≡ y -> apply o
 L {+op} {x} {y} {z} eq = +left-congruence {x} {y} {z} eq
 L {*op} {x} {y} {z} eq = *left-congruence {x} {y} {z} eq
 
-+right-congruence : ∀ {A} {x y z : Graph A} -> x ≡ y -> z + x ≡ z + y
-+right-congruence {_} {x} {y} {z} eq =
-  begin
-    z + x ≡⟨ +commutativity ⟩
-    x + z ≡⟨ +left-congruence eq ⟩
-    y + z ≡⟨ +commutativity  ⟩
-    z + y
-  ∎
-
 R : ∀ {op : BinaryOperator} -> ∀ {A} {x y z : Graph A} -> x ≡ y -> apply op z x ≡ apply op z y
 R {+op} {x} {y} {z} eq = +right-congruence {x} {y} {z} eq
 R {*op} {x} {y} {z} eq = *right-congruence {x} {y} {z} eq
