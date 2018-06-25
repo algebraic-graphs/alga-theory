@@ -12,7 +12,7 @@ record Dioid A (_≡_ : A -> A -> Set) : Set where
     transitivity : ∀ {r s t : A} -> r ≡ s -> s ≡ t -> r ≡ t
 
     +left-congruence  : ∀ {r s t : A} -> r ≡ s -> (r + t) ≡ (s + t)
-    -- +congruence holds but as a theorem, please see below
+    -- +right-congruence holds but as a theorem, please see below
     *left-congruence  : ∀ {r s t : A} -> r ≡ s -> (r * t) ≡ (s * t)
     *right-congruence : ∀ {r s t : A} -> r ≡ s -> (t * r) ≡ (t * s)
 
